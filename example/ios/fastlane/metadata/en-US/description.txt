@@ -1,0 +1,74 @@
+Asiabiopharm ShopScript - Your Gateway to Natural Health & Traditional Medicine
+
+Discover a comprehensive selection of premium herbal preparations, natural cosmetics, essential oils, and traditional medicine products from around the world. The Asiabiopharm app brings you authentic Asian and international health products right to your fingertips.
+
+🌿 FEATURES:
+
+• Browse extensive catalog of herbal preparations and remedies
+• Explore natural cosmetics and skincare products
+• Discover essential oils and aromatherapy solutions
+• Shop for organic natural foods and supplements
+• Find traditional medicine products from Asia
+• Secure shopping cart and checkout
+• Multiple currency support (USD, RUB, EUR, THB)
+• Fast and easy product search
+• Detailed product information and usage instructions
+• Customer reviews and ratings
+• Order tracking and history
+• Secure payment methods
+• International shipping available
+
+🏪 CATEGORIES:
+
+• Herbal Preparations (Powders, Extracts, Tablets, Capsules, Injections)
+• Therapeutic Mixtures (Tablets, Liquids, Ointments, Balms, Drops)
+• Cosmeceuticals (Body Care, Soaps, Shampoos, Creams, Masks)
+• Essential & Carrier Oils
+• Aromatherapy Products
+• Medical Equipment (Inhalers, Light Therapy, Filters)
+• Natural Foods (Organic Rice, Spices, Oils, Preserved Foods)
+• Traditional Medicine by Therapeutic Direction
+
+🎯 THERAPEUTIC DIRECTIONS:
+
+• Musculoskeletal System
+• Nervous System & Psychoemotional States
+• Eye & Hearing Disorders
+• Endocrine Disorders & Metabolism
+• Cardiovascular & Respiratory Diseases
+• Immune System Support
+• Skin & Reproductive Health
+• Digestive System
+• Oncology Support
+• Anti-Age & Detox Programs
+
+💎 WHY CHOOSE ASIABIOPHARM:
+
+✓ Authentic products sourced directly from manufacturers
+✓ Quality guaranteed traditional and modern remedies
+✓ Expert consultations available
+✓ Worldwide shipping
+✓ Competitive prices
+✓ Extensive product knowledge base
+✓ Multi-language support
+
+📱 ABOUT THE APP:
+
+Built with Flutter ShopScript technology, our app provides a seamless shopping experience across all devices. Browse thousands of products, manage your cart, track orders, and access your purchase history - all in one convenient application.
+
+🌍 INTERNATIONAL SHOP:
+
+Asiabiopharm serves customers worldwide with business hours Monday-Sunday, 09:00-21:00. Our team is available to help you find the right products for your health and wellness needs.
+
+📞 CUSTOMER SUPPORT:
+
+• Phone: +7 499 638 31 84 (Russia)
+• Phone: +66 84 242 66 01 (Thailand)
+• Email: manager@asiabiopharm.com
+• Website: https://asiabiopharm.com
+
+Start your journey to natural health today with Asiabiopharm!
+
+---
+
+DISCLAIMER: These products are not intended to diagnose, treat, cure, or prevent any disease. Always consult with a healthcare professional before starting any new supplement or treatment regimen.

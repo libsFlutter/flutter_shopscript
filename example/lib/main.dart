@@ -3,6 +3,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_shopscript/flutter_shopscript.dart';
 import 'package:flutter_shopscript/src/providers/shopscript_provider.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -115,8 +116,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<ShopScriptProvider>(context);
-
     final screens = [
       const ProductsScreen(),
       const CategoriesScreen(),
@@ -266,10 +265,16 @@ class ProductCard extends StatelessWidget {
                 width: double.infinity,
                 color: Colors.grey[200],
                 child: product.mainImage != null
-                    ? Image.network(
-                        product.mainImage!,
+                    ? CachedNetworkImage(
+                        imageUrl: product.mainImage!,
                         fit: BoxFit.cover,
-                        errorBuilder: (context, error, stackTrace) {
+                        placeholder: (context, url) => Container(
+                          color: Colors.grey[200],
+                          child: const Center(
+                            child: CircularProgressIndicator(),
+                          ),
+                        ),
+                        errorWidget: (context, url, error) {
                           return const Icon(Icons.image, size: 50);
                         },
                       )
@@ -325,12 +330,19 @@ class ProductDetailScreen extends StatelessWidget {
           children: [
             // Product image
             if (product.mainImage != null)
-              Image.network(
-                product.mainImage!,
+              CachedNetworkImage(
+                imageUrl: product.mainImage!,
                 width: double.infinity,
                 height: 300,
                 fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) {
+                placeholder: (context, url) => Container(
+                  height: 300,
+                  color: Colors.grey[200],
+                  child: const Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                ),
+                errorWidget: (context, url, error) {
                   return Container(
                     height: 300,
                     color: Colors.grey[200],
@@ -472,11 +484,26 @@ class CartScreen extends StatelessWidget {
                   final item = cart.items[index];
                   return ListTile(
                     leading: item.productImage != null
-                        ? Image.network(
-                            item.productImage!,
+                        ? CachedNetworkImage(
+                            imageUrl: item.productImage!,
                             width: 50,
                             height: 50,
                             fit: BoxFit.cover,
+                            placeholder: (context, url) => Container(
+                              width: 50,
+                              height: 50,
+                              color: Colors.grey[200],
+                              child: const Center(
+                                child: SizedBox(
+                                  width: 20,
+                                  height: 20,
+                                  child: CircularProgressIndicator(strokeWidth: 2),
+                                ),
+                              ),
+                            ),
+                            errorWidget: (context, url, error) {
+                              return const Icon(Icons.image);
+                            },
                           )
                         : const Icon(Icons.image),
                     title: Text(item.productName),

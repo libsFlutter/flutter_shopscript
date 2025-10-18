@@ -36,6 +36,13 @@ A comprehensive Flutter library for ShopScript e-commerce platform integration. 
 - Request logging in debug mode
 - Response caching
 
+### 🖼️ Image Caching
+- Automatic image caching with `cached_network_image`
+- Efficient memory management
+- Offline support for cached images
+- Loading placeholders and error handling
+- See [doc/IMAGE_CACHING.md](doc/IMAGE_CACHING.md) for details
+
 ### 🛍️ E-commerce Functionality
 - Full ShopScript REST API integration
 - Product catalog browsing

@@ -12,10 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Asiabiopharm Demo - ShopScript',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        useMaterial3: true,
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: true),
       home: const HomePage(),
     );
   }
@@ -56,7 +53,10 @@ class _HomePageState extends State<HomePage> {
         },
         destinations: const [
           NavigationDestination(icon: Icon(Icons.store), label: 'Products'),
-          NavigationDestination(icon: Icon(Icons.category), label: 'Categories'),
+          NavigationDestination(
+            icon: Icon(Icons.category),
+            label: 'Categories',
+          ),
           NavigationDestination(icon: Icon(Icons.shopping_cart), label: 'Cart'),
           NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
         ],
@@ -76,8 +76,7 @@ class ProductsScreen extends StatelessWidget {
         'name': 'Cassia Siamea Extract Tablets (KLO)',
         'price': 10.0,
         'image': 'https://asiabiopharm.com/en/favicon.png',
-        'description':
-            'Indication for use: insomnia, sleep disorders, anxiety',
+        'description': 'Indication for use: insomnia, sleep disorders, anxiety',
       },
       {
         'name': 'Ginkobonin Injection Ampoules',
@@ -154,7 +153,21 @@ class ProductCard extends StatelessWidget {
               child: Container(
                 width: double.infinity,
                 color: Colors.grey[100],
-                child: const Icon(Icons.health_and_safety, size: 80, color: Colors.blue),
+                child: CachedNetworkImage(
+                  imageUrl: product['image'] as String,
+                  fit: BoxFit.cover,
+                  placeholder: (context, url) => Container(
+                    color: Colors.grey[100],
+                    child: const Center(child: CircularProgressIndicator()),
+                  ),
+                  errorWidget: (context, url, error) {
+                    return const Icon(
+                      Icons.health_and_safety,
+                      size: 80,
+                      color: Colors.blue,
+                    );
+                  },
+                ),
               ),
             ),
             Padding(
@@ -207,11 +220,28 @@ class ProductDetailScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
+            CachedNetworkImage(
+              imageUrl: product['image'] as String,
               width: double.infinity,
               height: 300,
-              color: Colors.grey[100],
-              child: const Icon(Icons.health_and_safety, size: 150, color: Colors.blue),
+              fit: BoxFit.cover,
+              placeholder: (context, url) => Container(
+                height: 300,
+                color: Colors.grey[100],
+                child: const Center(child: CircularProgressIndicator()),
+              ),
+              errorWidget: (context, url, error) {
+                return Container(
+                  width: double.infinity,
+                  height: 300,
+                  color: Colors.grey[100],
+                  child: const Icon(
+                    Icons.health_and_safety,
+                    size: 150,
+                    color: Colors.blue,
+                  ),
+                );
+              },
             ),
             Padding(
               padding: const EdgeInsets.all(16),
@@ -221,8 +251,8 @@ class ProductDetailScreen extends StatelessWidget {
                   Text(
                     product['name'] as String,
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   const SizedBox(height: 12),
                   Text(
@@ -239,8 +269,8 @@ class ProductDetailScreen extends StatelessWidget {
                   Text(
                     'Description',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   const SizedBox(height: 8),
                   Text(
@@ -250,7 +280,10 @@ class ProductDetailScreen extends StatelessWidget {
                   const SizedBox(height: 24),
                   const Text(
                     '✅ Available from Asiabiopharm.com',
-                    style: TextStyle(color: Colors.green, fontWeight: FontWeight.w500),
+                    style: TextStyle(
+                      color: Colors.green,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                   const SizedBox(height: 8),
                   const Text(
@@ -301,7 +334,11 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final categories = [
       {'name': 'Herbal Preparations', 'icon': Icons.grass, 'count': 150},
-      {'name': 'Therapeutic Mixtures', 'icon': Icons.medical_services, 'count': 89},
+      {
+        'name': 'Therapeutic Mixtures',
+        'icon': Icons.medical_services,
+        'count': 89,
+      },
       {'name': 'Cosmeceuticals', 'icon': Icons.face, 'count': 67},
       {'name': 'Essential Oils', 'icon': Icons.water_drop, 'count': 45},
       {'name': 'Natural Foods', 'icon': Icons.restaurant, 'count': 112},
@@ -317,7 +354,10 @@ class CategoriesScreen extends StatelessWidget {
           child: ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.blue[100],
-              child: Icon(category['icon'] as IconData, color: Colors.blue[700]),
+              child: Icon(
+                category['icon'] as IconData,
+                color: Colors.blue[700],
+              ),
             ),
             title: Text(
               category['name'] as String,
@@ -327,9 +367,7 @@ class CategoriesScreen extends StatelessWidget {
             trailing: const Icon(Icons.chevron_right),
             onTap: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text('Opening ${category['name']}...'),
-                ),
+                SnackBar(content: Text('Opening ${category['name']}...')),
               );
             },
           ),
@@ -415,7 +453,9 @@ class ProfileScreen extends StatelessWidget {
                       onPressed: () {
                         Navigator.pop(context);
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Login feature coming soon!')),
+                          const SnackBar(
+                            content: Text('Login feature coming soon!'),
+                          ),
                         );
                       },
                       child: const Text('Login'),
@@ -436,4 +476,3 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 }
-

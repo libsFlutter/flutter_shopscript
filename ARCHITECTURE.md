@@ -496,7 +496,15 @@ Implement pagination for large lists.
 
 ### 4. Image Optimization
 
-Use cached_network_image for efficient image loading.
+Image caching is implemented using `cached_network_image` package for efficient image loading:
+
+- **Automatic caching**: Images are cached locally on device
+- **Placeholder support**: Loading indicators during image fetch
+- **Error handling**: Fallback widgets for failed loads
+- **Memory management**: Automatic cleanup and size limits
+- **Offline support**: Previously loaded images available offline
+
+See [IMAGE_CACHING.md](doc/IMAGE_CACHING.md) for detailed implementation guide.
 
 ### 5. Debouncing
 
