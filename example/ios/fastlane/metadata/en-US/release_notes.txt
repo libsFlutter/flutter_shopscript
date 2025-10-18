@@ -1,1 +1,14 @@
+Welcome to Asiabiopharm ShopScript 1.0!
 
+🎉 INITIAL RELEASE
+
+• Browse extensive catalog of herbal and natural products
+• Easy product search and filtering
+• Secure shopping cart
+• Multiple payment options
+• Order tracking
+• Customer account management
+• Multi-currency support
+• International shipping
+
+Thank you for choosing Asiabiopharm for your natural health needs!

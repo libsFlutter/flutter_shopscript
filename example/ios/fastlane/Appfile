@@ -1,8 +1,8 @@
-app_identifier("com.example.flutterShopscriptExample") # The bundle identifier of your app
-apple_id("anton.v.dodonov@gmail.com") # Your Apple Developer Portal username
+app_identifier("com.asiabiopharm.shopscript") # The bundle identifier of your app
+apple_id("your-apple-id@example.com") # Your Apple Developer Portal email address
 
-itc_team_id("120374799") # App Store Connect Team ID
-team_id("6XT4R7V83F") # Developer Portal Team ID
+itc_team_id("YOUR_TEAM_ID") # App Store Connect Team ID
+team_id("YOUR_TEAM_ID") # Developer Portal Team ID
 
 # For more information about the Appfile, see:
 #     https://docs.fastlane.tools/advanced/#appfile
