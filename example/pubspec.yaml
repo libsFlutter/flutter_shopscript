@@ -1,0 +1,37 @@
+name: flutter_shopscript_example
+description: Example app for flutter_shopscript plugin
+publish_to: 'none'
+version: 1.0.0
+
+environment:
+  sdk: '>=3.8.0 <4.0.0'
+  flutter: ">=3.24.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # ShopScript plugin
+  flutter_shopscript:
+    path: ../
+  
+  # State management
+  provider: ^6.1.5
+  
+  # UI
+  cached_network_image: ^3.2.3
+  
+  # Environment variables
+  flutter_dotenv: ^5.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - .env
+
