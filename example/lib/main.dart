@@ -338,9 +338,7 @@ class ProductDetailScreen extends StatelessWidget {
                 placeholder: (context, url) => Container(
                   height: 300,
                   color: Colors.grey[200],
-                  child: const Center(
-                    child: CircularProgressIndicator(),
-                  ),
+                  child: const Center(child: CircularProgressIndicator()),
                 ),
                 errorWidget: (context, url, error) {
                   return Container(
@@ -497,7 +495,9 @@ class CartScreen extends StatelessWidget {
                                 child: SizedBox(
                                   width: 20,
                                   height: 20,
-                                  child: CircularProgressIndicator(strokeWidth: 2),
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 2,
+                                  ),
                                 ),
                               ),
                             ),
